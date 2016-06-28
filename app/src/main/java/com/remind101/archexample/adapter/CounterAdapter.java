@@ -1,9 +1,10 @@
-package com.remind101.archexample;
+package com.remind101.archexample.adapter;
 
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.remind101.archexample.R;
 import com.remind101.archexample.models.Counter;
 import com.remind101.archexample.presenters.CounterPresenter;
 import com.remind101.archexample.views.CounterViewHolder;

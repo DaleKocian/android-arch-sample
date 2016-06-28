@@ -1,8 +1,9 @@
-package com.remind101.archexample;
+package com.remind101.archexample.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 
+import com.remind101.archexample.MvpViewHolder;
 import com.remind101.archexample.presenters.BasePresenter;
 
 import java.util.HashMap;
@@ -15,20 +16,21 @@ public abstract class MvpRecyclerAdapter<M, P extends BasePresenter, VH extends 
         presenters = new HashMap<>();
     }
 
-    @NonNull protected P getPresenter(@NonNull M model) {
+    @NonNull
+    protected P getPresenter(@NonNull M model) {
         System.err.println("Getting presenter for item " + getModelId(model));
         return presenters.get(getModelId(model));
     }
 
-    @NonNull protected abstract P createPresenter(@NonNull M model);
+    @NonNull
+    protected abstract P createPresenter(@NonNull M model);
 
-    @NonNull protected abstract Object getModelId(@NonNull M model);
-
+    @NonNull
+    protected abstract Object getModelId(@NonNull M model);
 
     @Override
     public void onViewRecycled(VH holder) {
         super.onViewRecycled(holder);
-
         holder.unbindPresenter();
     }
 

@@ -26,7 +26,6 @@ public class MainPresenter extends BasePresenter<List<Counter>, MainView> {
     @Override
     public void bindView(@NonNull MainView view) {
         super.bindView(view);
-
         // Let's not reload data if it's already here
         if (model == null && !isLoadingData) {
             view().showLoading();
@@ -43,7 +42,6 @@ public class MainPresenter extends BasePresenter<List<Counter>, MainView> {
         Counter counter = new Counter();
         counter.setName("New Counter");
         counter.setValue(0);
-
         // Update view immediately
         model.add(counter);
         CounterDatabase.getInstance().saveCounter(counter);

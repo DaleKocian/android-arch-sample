@@ -16,7 +16,8 @@ public class CounterViewHolder extends MvpViewHolder<CounterPresenter> implement
     private final TextView counterValue;
     private final ImageView minusButton;
     private final ImageView plusButton;
-    @Nullable private OnCounterClickListener listener;
+    @Nullable
+    private OnCounterClickListener listener;
 
     public CounterViewHolder(View itemView) {
         super(itemView);
@@ -24,7 +25,6 @@ public class CounterViewHolder extends MvpViewHolder<CounterPresenter> implement
         counterValue = (TextView) itemView.findViewById(R.id.counter_value);
         minusButton = (ImageView) itemView.findViewById(R.id.minus_button);
         plusButton = (ImageView) itemView.findViewById(R.id.plus_button);
-
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

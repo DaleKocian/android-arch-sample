@@ -34,7 +34,8 @@ public class CounterDatabase {
         }
     }
 
-    @Nullable public Counter getCounter(int id) {
+    @Nullable
+    public Counter getCounter(int id) {
         synchronized (counters) {
             return counters.get(id);
         }
