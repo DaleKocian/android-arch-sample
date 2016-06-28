@@ -11,6 +11,8 @@ import com.remind101.archexample.views.MainView;
 import java.util.List;
 
 public class MainPresenter extends BasePresenter<List<Counter>, MainView> {
+    private static final int TIME_TO_SLEEP = 3000;
+    private static final String NEW_COUNTER = "New Counter";
     private boolean isLoadingData = false;
 
     @Override
@@ -40,7 +42,7 @@ public class MainPresenter extends BasePresenter<List<Counter>, MainView> {
 
     public void onAddCounterClicked() {
         Counter counter = new Counter();
-        counter.setName("New Counter");
+        counter.setName(NEW_COUNTER);
         counter.setValue(0);
         // Update view immediately
         model.add(counter);
@@ -53,7 +55,7 @@ public class MainPresenter extends BasePresenter<List<Counter>, MainView> {
     private class LoadDataTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected Void doInBackground(Void... params) {
-            SystemClock.sleep(3000);
+            SystemClock.sleep(TIME_TO_SLEEP);
             return null;
         }
 
